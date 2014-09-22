@@ -1,5 +1,5 @@
 (function($){
-    $.fn.scrollplay = function(options) {
+    $.fn.scrollplay = function() {
 
         var that = this;
 
