@@ -3,6 +3,9 @@
 
         var that = this;
 
+        /**
+         * Resize the video tot the dimensions of the containing div.
+         */
         function resizeVideo() {
             var $scrollplay = $(this);
             $scrollplay.data('is-playing', 0);
@@ -10,12 +13,21 @@
             $scrollplay.find('video').width($scrollplay.width());
         }
 
+        /**
+         * Checks if the scrollplay div overlaps the center of the browser window.
+         *
+         * @param $scrollplay {jQuery} One of the scrollplay divs
+         * @returns {boolean}
+         */
         function inCenter($scrollplay) {
             var scroll_center = $(window).scrollTop() + ($(window).height() / 2);
             var elem_offset = $scrollplay.offset();
             return (scroll_center > elem_offset.top && scroll_center < (elem_offset.top + $scrollplay.height()));
         }
 
+        /**
+         * Find the video and play or stop
+         */
         function playCenteredVideo() {
             that.each(function() {
                 var $scrollplay = $(this);
@@ -33,7 +45,10 @@
             });
         }
 
+        // Initially resize the video's
         this.each(resizeVideo);
+
+        // On scroll or on resize consider to play or stop a video
         $(window).scroll(playCenteredVideo);
         $(window).resize(playCenteredVideo);
 
