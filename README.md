@@ -8,7 +8,7 @@ Basic usage
 Add jQuery and scrollplay to the document
 ```html
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-</script><script src="javascripts/scrollplay.min.js"></script>
+<script src="javascripts/scrollplay.min.js"></script>
 ```
 
 Add folowing HTML to the body of your document.
