@@ -15,7 +15,7 @@
 
         var that = this;
         cfg = cfg || {};
-        cfg.displaying_videos_is_allowed = cfg.displaying_videos_is_allowed || function() {return true;};
+        cfg.displaying_videos_is_allowed_when = cfg.displaying_videos_is_allowed_when || function() {return true;};
         cfg.start_playing_video_when = cfg.start_playing_video_when || inCenter;
 
 
@@ -56,7 +56,7 @@
          * Find the video and play or stop
          */
         function playCenteredVideo() {
-            var displaying_videos_is_allowed = cfg.displaying_videos_is_allowed();
+            var displaying_videos_is_allowed = cfg.displaying_videos_is_allowed_when();
             that.each(function() {
                 var $scrollplay = $(this);
                 var is_playing = (parseInt($scrollplay.data('is-playing'), 10) == 1 || false);

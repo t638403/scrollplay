@@ -34,7 +34,7 @@ You can define boolean function which will be used to determine when a video mus
 ```javascript
 var cfg = {
     start_playing_video_when:function() {
-        // ...
+        // ... DIV,scrollplay passes vertical center of browser window
     }
 }
 $(document).ready(function(){
@@ -46,8 +46,8 @@ You can define a boolean function which will be used to determine if videos shou
 you dont want to display movies on an mobile phone.
 ```javascript
 var cfg = {
-    displaying_videos_is_allowed:function() {
-        // ...
+    displaying_videos_is_allowed_when:function() {
+        // ... not on a phone or tablet
     }
 }
 $(document).ready(function(){
