@@ -1,27 +1,56 @@
-scrollplay
+Scrollplay
 ==========
+A jQuery plugin to replace an image with an HTML5 video on a certain criteria. This criteria defaults to crossing the
+vertical center of your browser window.
 
-A jQuery plugin for playing and stopping HTML5 video's when they cross the vertical center of the browser window during a scroll/resize action.
-
-I did not add a video file, so you have to come up with one your self to try this plugin.
-
-usage
+Usage
 =====
-Add a `div` containing a `video` tag to the `body` of your document
+Add jQuery and scrollplay to the document
+```html
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+</script><script src="javascripts/scrollplay.js"></script>
+```
 
+Add folowing HTML to the body of your document.
 ```html
 <div class="scrollplay">
+    <img src="some_image.jpg" alt="Some image"/>
     <video>
         <source src="some_video.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 </div>
 ```
-
-Add `scrollplay.js` to your HTML page using a `script` tag and execute following code
-
+Run folowing code somewhere
 ```javascript
 $(document).ready(function(){
     $('.scrollplay').scrollplay();
+});
+```
+
+Advanced usage
+==============
+You can define boolean function which will be used to determine when a video must be played, instead of the vertical center function.
+```javascript
+var cfg = {
+    start_playing_video_when:function() {
+        // ...
+    }
+}
+$(document).ready(function(){
+    $('.scrollplay').scrollplay(cfg);
+});
+```
+
+You can define a boolean function which will be used to determine if videos should be displayed at all. For example, maybe
+you dont want to display movies on an mobile phone.
+```javascript
+var cfg = {
+    displaying_videos_is_allowed:function() {
+        // ...
+    }
+}
+$(document).ready(function(){
+    $('.scrollplay').scrollplay(cfg);
 });
 ```
