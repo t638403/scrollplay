@@ -1,9 +1,9 @@
 Scrollplay
 ==========
 A jQuery plugin to replace an image with an HTML5 video on a certain criteria. This criteria defaults to crossing the
-vertical center of your browser window.
+vertical center of your browser window due to a scroll event.
 
-Usage
+Basic usage
 =====
 Add jQuery and scrollplay to the document
 ```html
