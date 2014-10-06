@@ -5,13 +5,12 @@ event. So, in short, a video will play if it overlaps the center the page and st
 center.
 
 ## Basic usage
-Add scripts
+###1 Add scripts
 ```html
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="javascripts/scrollplay.min.js"></script>
 ```
-
-Add html
+###2 Add HTML
 ```html
 <div class="scrollplay">
     <img src="some_image.jpg" alt="Some image"/>
@@ -33,7 +32,7 @@ Or [bootstrap](http://getbootstrap.com/) html
   </div>
 </div>
 ```
-
+###3 Initialize plugin
 Determine the size of your image and video, for example 1024x720. The size of the image and the video should be equal. 
 Initialize the plugin by running the folowing code.
 ```javascript
