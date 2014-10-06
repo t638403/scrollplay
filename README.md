@@ -35,20 +35,23 @@ Or [bootstrap](http://getbootstrap.com/) html
 Determine the size of your image and video, for example 1024x720. The size of the image and the video should be equal. 
 Initialize the plugin by running the folowing code.
 ```javascript
+// Setup config
 var cfg = {
     width:1024,
     height:720
 }
+
+// Initialize
 $(document).ready(function(){
     $('.scrollplay').scrollplay(cfg);
 });
 ```
 
-Advanced usage
-==============
+#Advanced usage
 You can define a boolean function which will be used to determine when a video must be played, instead of the default 
 criterium. Maybe you want to play it when it enters the screen, and stop it when it leaves the screen.
 ```javascript
+// Setup config
 var cfg = {
     width:1024,
     height:720,
@@ -56,6 +59,8 @@ var cfg = {
         // ... Self defined criterium
     }
 }
+
+// Initialize
 $(document).ready(function(){
     $('.scrollplay').scrollplay(cfg);
 });
@@ -64,14 +69,51 @@ $(document).ready(function(){
 You can define a boolean function which will be used to determine if videos should be displayed at all. For example, maybe
 you dont want to play video on an a mobile phone.
 ```javascript
+// Setup config
 var cfg = {
     width:1024,
     height:720,
     displaying_videos_is_allowed_when:function() {
-        // ... not on a phone or tablet
+        // ... Self defined criterium
     }
 }
+
+// Initialize
 $(document).ready(function(){
     $('.scrollplay').scrollplay(cfg);
 });
 ```
+##Tricks
+### Do not play on moblie and tablet
+Add this html somewhere in the page
+
+```html
+<div id="displaying_videos_is_allowed" class="visible-lg"></div>
+```
+Initialize plugin like this
+```javascript
+// Define criterium
+function on_large_screen() {
+    return ($('#displaying_videos_is_allowed').css('display') == 'block' || false);
+}
+
+// Setup config
+var cfg = {
+    width:1024,
+    height:720,
+    displaying_videos_is_allowed_when:on_large_screen
+}
+
+// Initialize
+$(document).ready(function(){
+    $('.scrollplay').scrollplay(cfg);
+});
+```
+
+### Remove weird margin on video
+Somehow i got a weird margin on the bottom of my video. I found this CSS trick.
+ ```css
+ video {
+    display:block;
+ } 
+ ```
