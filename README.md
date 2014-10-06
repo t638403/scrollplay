@@ -47,7 +47,7 @@ $(document).ready(function(){
 });
 ```
 
-#Advanced usage
+##Advanced usage
 You can define a boolean function which will be used to determine when a video must be played, instead of the default 
 criterium. Maybe you want to play it when it enters the screen, and stop it when it leaves the screen.
 ```javascript
