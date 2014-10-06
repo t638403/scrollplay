@@ -111,7 +111,7 @@ $(document).ready(function(){
 ```
 
 ### Remove weird margin on video
-Somehow i got a weird margin on the bottom of my video. I found this CSS trick.
+Somehow I got a weird margin on the bottom of my video. I found this CSS trick.
  ```css
  video {
     display:block;
