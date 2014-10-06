@@ -1,19 +1,17 @@
-Scrollplay
-==========
+#Scrollplay
 A jQuery plugin to replace an image with a playing HTML5 video and back. This will happen if a self defined criteria will 
 evaluate to true. This criteria defaults to crossing the vertical center of your browser window due to a scroll 
 event. So, in short, a video will play if it overlaps the center the page and stops playing if you scroll it out of the 
 center.
 
-Basic usage
-=====
-Add jQuery and scrollplay to the document
+## Basic usage
+Add scripts
 ```html
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="javascripts/scrollplay.min.js"></script>
 ```
 
-Add folowing HTML to the body of your document.
+Add html
 ```html
 <div class="scrollplay">
     <img src="some_image.jpg" alt="Some image"/>
@@ -23,7 +21,7 @@ Add folowing HTML to the body of your document.
     </video>
 </div>
 ```
-A [bootstrap](http://getbootstrap.com/) example
+Or [bootstrap](http://getbootstrap.com/) html
 ```html
 <div class="row">
   <div class="col-md-6 col-md-offset-3 scrollplay">
