@@ -1,6 +1,6 @@
 #Scrollplay
-A jQuery plugin for playing a video if it overlaps the center the page and stop it if you scroll it out of the 
-center.
+A jQuery plugin for playing a video if scrolled into the center of the page. This plugin can be used with responsive 
+grids.
 
 ## Basic usage
 ###1 Add scripts
