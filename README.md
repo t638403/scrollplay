@@ -1,7 +1,9 @@
 Scrollplay
 ==========
-A jQuery plugin to replace an image with an HTML5 video on a certain criteria. This criteria defaults to crossing the
-vertical center of your browser window due to a scroll event.
+A jQuery plugin to replace an image with a playing HTML5 video and back. This will happen if a self defined criteria will 
+evaluate to true. This criteria defaults to crossing the vertical center of your browser window due to a scroll 
+event. So, in short, a video will play if it overlaps the center the page and stops playing if you scroll it out of the 
+center.
 
 Basic usage
 =====
@@ -21,20 +23,40 @@ Add folowing HTML to the body of your document.
     </video>
 </div>
 ```
-Run folowing code somewhere
+A [bootstrap](http://getbootstrap.com/) example
+```html
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 scrollplay">
+        <img src="some_image.jpg" alt="Some image"/>
+      <video>
+          <source src="some_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+  </div>
+</div>
+
+Determine the size of your image and video, for example 1024x720. The size of the image and the video should be equal. 
+Initialize the plugin by running the folowing code.
 ```javascript
+var cfg = {
+    width:1024,
+    height:720
+}
 $(document).ready(function(){
-    $('.scrollplay').scrollplay();
+    $('.scrollplay').scrollplay(cfg);
 });
 ```
 
 Advanced usage
 ==============
-You can define boolean function which will be used to determine when a video must be played, instead of the vertical center function.
+You can define a boolean function which will be used to determine when a video must be played, instead of the default 
+criterium. Maybe you want to play it when it enters the screen, and stop it when it leaves the screen.
 ```javascript
 var cfg = {
+    width:1024,
+    height:720,
     start_playing_video_when:function() {
-        // ... DIV,scrollplay passes vertical center of browser window
+        // ... Self defined criterium
     }
 }
 $(document).ready(function(){
@@ -43,9 +65,11 @@ $(document).ready(function(){
 ```
 
 You can define a boolean function which will be used to determine if videos should be displayed at all. For example, maybe
-you dont want to display movies on an mobile phone.
+you dont want to play video on an a mobile phone.
 ```javascript
 var cfg = {
+    width:1024,
+    height:720,
     displaying_videos_is_allowed_when:function() {
         // ... not on a phone or tablet
     }
