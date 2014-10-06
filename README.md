@@ -19,7 +19,7 @@ A replacement image for the stopped video and the video it self.
     </video>
 </div>
 ```
-Or [bootstrap](http://getbootstrap.com/) html
+Or [bootstrap](http://getbootstrap.com/) HTML
 ```html
 <div class="row">
   <div class="col-md-6 col-md-offset-3 scrollplay">
@@ -85,8 +85,7 @@ $(document).ready(function(){
 ```
 ##Tricks
 ### Do not play on moblie and tablet
-Add this html somewhere in the page
-
+Add this [bootstrap](http://getbootstrap.com/) HTML to your page
 ```html
 <div id="displaying_videos_is_allowed" class="visible-lg"></div>
 ```
