@@ -32,7 +32,7 @@ Or [bootstrap](http://getbootstrap.com/) html
       </video>
   </div>
 </div>
-'''
+```
 
 Determine the size of your image and video, for example 1024x720. The size of the image and the video should be equal. 
 Initialize the plugin by running the folowing code.
